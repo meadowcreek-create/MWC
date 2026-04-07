@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Tree Photo Album</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background: #faf9f7; color: #0d0d0d; -webkit-font-smoothing: antialiased; }
+    .serif { font-family: 'DM Serif Display', serif; }
+    nav { position: sticky; top: 0; z-index: 50; background: rgba(250,249,247,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e5e3df; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; background: #0d0d0d; color: #fff; border-radius: 8px; padding: 14px 28px; font-size: 1rem; font-weight: 500; text-decoration: none; transition: all 0.18s ease; }
+    .btn:hover { background: #1a1a1a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .card { background: #fff; border: 1px solid #e5e3df; border-radius: 16px; padding: 32px; transition: all 0.2s ease; }
+    .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .check { display: flex; align-items: center; gap: 10px; font-size: 0.97rem; color: #374151; margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;">
+    <span class="serif" style="font-size:1.2rem;">Family Tree Photo Album</span>
+    <a href="#buy" class="btn" style="padding:10px 20px;font-size:0.9rem;">Get the App</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="max-width:1100px;margin:0 auto;padding:80px 24px;text-align:center;">
+  <div style="display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;color:#2563eb;border-radius:999px;padding:4px 16px;font-size:0.8rem;font-weight:500;margin-bottom:24px;">
+    ✦ Now available for Android
+  </div>
+  <h1 class="serif" style="font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;letter-spacing:-0.03em;margin-bottom:24px;">
+    Your family's story,<br/><em>beautifully preserved.</em>
+  </h1>
+  <p style="font-size:1.15rem;color:#6b7280;max-width:540px;margin:0 auto 40px;line-height:1.7;">
+    Family Tree Photo Album lets you build a living, visual record of your family history — connecting photos, names, dates, and stories across generations.
+  </p>
+  <a href="YOUR_STRIPE_LINK_HERE" class="btn" style="font-size:1.05rem;padding:16px 36px;">
+    Download Now — $[YOUR PRICE]
+  </a>
+  <p style="margin-top:16px;font-size:0.85rem;color:#9ca3af;">One-time payment · Android · 30-day money-back guarantee</p>
+</section>
+
+<!-- FEATURES -->
+<section style="max-width:1100px;margin:0 auto;padding:60px 24px;">
+  <h2 class="serif" style="text-align:center;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.03em;margin-bottom:48px;">Everything your family needs.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:16px;">🌳</div>
+      <h3 style="font-weight:600;font-size:1.1rem;margin-bottom:10px;">Build Your Family Tree</h3>
+      <p style="color:#6b7280;font-size:0.95rem;line-height:1.65;">Add family members, link relationships, and watch your family tree grow across generations — all in one place.</p>
+    </div>
+
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:16px;">📸</div>
+      <h3 style="font-weight:600;font-size:1.1rem;margin-bottom:10px;">Photo Albums for Every Branch</h3>
+      <p style="color:#6b7280;font-size:0.95rem;line-height:1.65;">Attach photos directly to family members and events. Keep old and new memories organized and easy to find.</p>
+    </div>
+
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:16px;">📖</div>
+      <h3 style="font-weight:600;font-size:1.1rem;margin-bottom:10px;">Preserve Stories Forever</h3>
+      <p style="color:#6b7280;font-size:0.95rem;line-height:1.65;">Add dates, places, and personal notes to every person and photo so the stories behind the pictures are never lost.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="max-width:1100px;margin:0 auto;padding:40px 24px;">
+  <div style="background:#0d0d0d;border-radius:24px;padding:64px 48px;text-align:center;">
+    <p class="serif" style="font-size:clamp(1.4rem,3vw,2rem);color:#fff;line-height:1.4;max-width:600px;margin:0 auto 32px;">
+      "Replace this with a real quote from someone who has used your app. Specific results convert best."
+    </p>
+    <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;">— First Name Last Name, City</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="buy" style="max-width:500px;margin:0 auto;padding:80px 24px;">
+  <div style="background:#fff;border:1.5px solid #e5e3df;border-radius:24px;padding:48px;box-shadow:0 16px 60px rgba(0,0,0,0.06);">
+    <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#2563eb;margin-bottom:12px;">One-Time Purchase</p>
+    <div style="font-size:3.5rem;font-weight:600;letter-spacing:-0.04em;line-height:1;margin-bottom:6px;">$[PRICE]</div>
+    <p style="color:#6b7280;font-size:0.95rem;margin-bottom:32px;">Pay once. Yours forever. Free updates included.</p>
+
+    <div class="check"><span style="color:#16a34a;font-size:1.1rem;">✓</span> Full access to all features</div>
+    <div class="check"><span style="color:#16a34a;font-size:1.1rem;">✓</span> Works on Android phones and tablets</div>
+    <div class="check"><span style="color:#16a34a;font-size:1.1rem;">✓</span> Free updates</div>
+    <div class="check"><span style="color:#16a34a;font-size:1.1rem;">✓</span> 30-day money-back guarantee</div>
+
+    <a href="YOUR_STRIPE_LINK_HERE" class="btn" style="width:100%;justify-content:center;margin-top:32px;padding:16px;">
+      Buy Now →
+    </a>
+    <p style="text-align:center;margin-top:14px;font-size:0.82rem;color:#9ca3af;">Secure payment · Instant download link sent to your email</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid #e5e3df;margin-top:40px;">
+  <div style="max-width:1100px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:0.85rem;color:#9ca3af;">
+    <span class="serif" style="color:#0d0d0d;">Family Tree Photo Album</span>
+    <div style="display:flex;gap:24px;">
+      <a href="mailto:you@yourdomain.com" style="color:#9ca3af;text-decoration:none;">Contact</a>
+      <a href="#" style="color:#9ca3af;text-decoration:none;">Privacy Policy</a>
+    </div>
+    <span>© 2026 All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
