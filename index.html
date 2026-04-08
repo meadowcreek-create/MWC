@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Family Album — Keep Every Face, Every Story</title>
+  <title>Family Album — A Simple Family Tree Photo Album</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -26,7 +26,6 @@
     }
     .serif { font-family: 'Lora', serif; }
 
-    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 50;
       background: rgba(253,248,242,0.92);
@@ -34,16 +33,13 @@
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
-      max-width: 1080px; margin: 0 auto;
-      padding: 0 24px;
+      max-width: 1080px; margin: 0 auto; padding: 0 24px;
       display: flex; align-items: center; justify-content: space-between;
       height: 64px;
     }
     .logo {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      color: var(--bark);
-      text-decoration: none;
+      font-family: 'Lora', serif; font-size: 1.15rem;
+      color: var(--bark); text-decoration: none;
       display: flex; align-items: center; gap: 10px;
     }
     .logo-icon {
@@ -52,121 +48,87 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem;
     }
-
-    /* BUTTONS */
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--bark); color: #fff;
       border-radius: 10px; padding: 13px 26px;
       font-family: 'Nunito', sans-serif;
       font-size: 0.97rem; font-weight: 600;
-      text-decoration: none;
-      transition: all 0.18s ease;
+      text-decoration: none; transition: all 0.18s ease;
       box-shadow: 0 3px 12px rgba(92,61,46,0.25);
     }
-    .btn:hover {
-      background: #3e2920;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(92,61,46,0.3);
-    }
+    .btn:hover { background: #3e2920; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(92,61,46,0.3); }
     .btn-sm { padding: 10px 20px; font-size: 0.88rem; }
 
     /* HERO */
     .hero {
-      max-width: 1080px; margin: 0 auto;
-      padding: 80px 24px 60px;
+      max-width: 1080px; margin: 0 auto; padding: 80px 24px 60px;
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 60px; align-items: center;
     }
     @media (max-width: 720px) {
       .hero { grid-template-columns: 1fr; padding: 48px 20px 40px; gap: 40px; }
+      .phone-wrap { order: -1; }
     }
     .hero-headline {
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      color: var(--bark);
+      line-height: 1.12; letter-spacing: -0.02em; color: var(--bark);
     }
     .hero-sub {
       font-size: 1.08rem; line-height: 1.75;
       color: var(--muted); margin-top: 20px; max-width: 480px;
     }
     .hero-actions { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
-    .hero-trust { margin-top: 20px; font-size: 0.82rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px; }
-    .hero-trust span { display: flex; align-items: center; gap: 5px; }
+    .hero-trust { margin-top: 20px; font-size: 0.82rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 14px; }
 
     /* PHONE MOCKUP */
-    .phone-wrap {
-      display: flex; justify-content: center; align-items: center;
-    }
+    .phone-wrap { display: flex; justify-content: center; align-items: center; }
     .phone {
-      width: 220px;
-      background: var(--ink);
-      border-radius: 38px;
-      padding: 16px 12px;
+      width: 220px; background: var(--ink); border-radius: 38px; padding: 16px 12px;
       box-shadow: 0 40px 80px rgba(30,19,12,0.3), 0 0 0 1px rgba(255,255,255,0.08);
-      position: relative;
     }
     .phone-notch {
-      width: 80px; height: 22px;
-      background: var(--ink);
-      border-radius: 0 0 14px 14px;
-      margin: 0 auto 10px;
-      position: relative; z-index: 2;
+      width: 80px; height: 22px; background: var(--ink);
+      border-radius: 0 0 14px 14px; margin: 0 auto 10px;
     }
     .phone-screen {
-      background: #2a1a10;
-      border-radius: 26px;
-      overflow: hidden;
-      aspect-ratio: 9/16;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 12px;
-      position: relative;
+      background: #2a1a10; border-radius: 26px; overflow: hidden;
+      aspect-ratio: 9/16; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; position: relative;
     }
     .phone-tree {
-      display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;
-      padding: 20px 14px;
-    }
-    /* Tree rows */
-    .tree-row { display: flex; justify-content: center; gap: 8px; width: 100%; }
-    .tree-frame {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(200,146,58,0.4);
-      border-radius: 10px;
       display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 8px 6px;
-      flex: 1; max-width: 72px;
-      gap: 4px;
+      gap: 6px; width: 100%; padding: 14px 10px;
+    }
+    .tree-row { display: flex; justify-content: center; gap: 5px; width: 100%; }
+    .tree-frame {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(200,146,58,0.4);
+      border-radius: 8px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 5px 3px; flex: 1; max-width: 65px; gap: 3px;
     }
     .tree-frame .avatar {
-      width: 36px; height: 36px; border-radius: 50%;
+      width: 28px; height: 28px; border-radius: 50%;
       background: linear-gradient(135deg, var(--gold), #a06820);
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; font-weight: 700; color: #fff;
+      font-size: 0.7rem; font-weight: 700; color: #fff;
     }
-    .tree-frame .label {
-      font-size: 0.48rem; color: var(--gold-light); text-align: center;
-      font-family: 'Nunito', sans-serif; font-weight: 600;
-      line-height: 1.2;
+    .tree-frame .lbl {
+      font-size: 0.42rem; color: var(--gold-light); text-align: center;
+      font-family: 'Nunito', sans-serif; font-weight: 600; line-height: 1.2;
     }
     .tree-frame.you { border-color: var(--gold); background: rgba(200,146,58,0.15); }
-    .connector {
-      width: 1px; height: 14px; background: rgba(200,146,58,0.3);
-      margin: 0 auto;
-    }
-    .home-label {
-      font-size: 0.5rem; color: var(--gold);
-      font-family: 'Nunito', sans-serif; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px;
+    .connector { width: 1px; height: 8px; background: rgba(200,146,58,0.3); margin: 0 auto; }
+    .home-lbl {
+      font-size: 0.42rem; color: var(--gold); font-family: 'Nunito', sans-serif;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     }
     .nav-hint {
-      font-size: 0.45rem; color: rgba(255,255,255,0.35);
-      font-family: 'Nunito', sans-serif; text-align: center;
-      position: absolute; bottom: 12px; left: 0; right: 0;
+      font-size: 0.4rem; color: rgba(255,255,255,0.3); font-family: 'Nunito', sans-serif;
+      text-align: center; position: absolute; bottom: 8px; left: 0; right: 0;
     }
 
-    /* SECTION */
+    /* SECTIONS */
     .section { max-width: 1080px; margin: 0 auto; padding: 72px 24px; }
     .section-label {
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
@@ -177,27 +139,27 @@
       line-height: 1.18; letter-spacing: -0.02em; color: var(--bark);
     }
 
-    /* WHO IT'S FOR */
-    .audience-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px; margin-top: 40px;
-    }
-    .audience-card {
+    /* CARDS */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 40px; }
+    .card {
       background: #fff; border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: all 0.2s ease;
+      border-radius: 16px; padding: 28px; transition: all 0.2s ease;
     }
-    .audience-card:hover { box-shadow: 0 10px 36px rgba(92,61,46,0.1); transform: translateY(-2px); }
-    .audience-icon { font-size: 2rem; margin-bottom: 14px; }
+    .card:hover { box-shadow: 0 10px 36px rgba(92,61,46,0.1); transform: translateY(-2px); }
+    .card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .card h3 { font-weight: 600; font-size: 1rem; margin-bottom: 8px; color: var(--bark); }
+    .card p { color: var(--muted); font-size: 0.93rem; line-height: 1.65; }
+    .feat-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--warm); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; margin-bottom: 16px;
+    }
 
-    /* HOW IT WORKS */
-    .steps { display: flex; flex-direction: column; gap: 0; margin-top: 48px; max-width: 640px; }
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; margin-top: 48px; max-width: 640px; }
     .step { display: flex; gap: 24px; position: relative; padding-bottom: 40px; }
     .step:last-child { padding-bottom: 0; }
-    .step-line {
-      position: absolute; left: 19px; top: 40px; bottom: 0;
-      width: 2px; background: var(--gold-light);
-    }
+    .step-line { position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--gold-light); }
     .step:last-child .step-line { display: none; }
     .step-num {
       width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
@@ -205,37 +167,24 @@
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 0.9rem; position: relative; z-index: 1;
     }
-    .step-content h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; color: var(--bark); }
-    .step-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
+    .step h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; color: var(--bark); }
+    .step p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
 
-    /* FEATURES */
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px; margin-top: 40px;
+    /* PERSONAL STORY */
+    .story-band { background: var(--warm); border-top: 1px solid var(--gold-light); border-bottom: 1px solid var(--gold-light); }
+    .story-inner { max-width: 700px; margin: 0 auto; padding: 64px 24px; text-align: center; }
+    .story-inner blockquote {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.85; color: var(--bark);
     }
-    .feature-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px;
-      transition: all 0.2s ease;
-    }
-    .feature-card:hover { box-shadow: 0 10px 36px rgba(92,61,46,0.1); transform: translateY(-2px); }
-    .feature-icon {
-      width: 46px; height: 46px; border-radius: 12px;
-      background: var(--warm); display: flex; align-items: center;
-      justify-content: center; font-size: 1.3rem; margin-bottom: 16px;
-    }
-    .feature-card h3 { font-weight: 600; font-size: 1rem; margin-bottom: 8px; color: var(--bark); }
-    .feature-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
+    .story-inner .attr { margin-top: 20px; font-size: 0.85rem; color: var(--muted); }
 
     /* TESTIMONIAL */
-    .testimonial {
-      background: var(--bark); border-radius: 24px;
-      padding: 64px 48px; text-align: center;
-    }
+    .testimonial { background: var(--bark); border-radius: 24px; padding: 64px 48px; text-align: center; }
     @media (max-width: 600px) { .testimonial { padding: 40px 24px; } }
     .testimonial blockquote {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-family: 'Lora', serif; font-size: clamp(1.2rem, 2.5vw, 1.7rem);
       line-height: 1.5; color: #fff; font-style: italic;
       max-width: 600px; margin: 0 auto 28px;
     }
@@ -243,8 +192,7 @@
 
     /* PRICING */
     .pricing-card {
-      background: #fff;
-      border: 2px solid var(--gold-light);
+      background: #fff; border: 2px solid var(--gold-light);
       border-radius: 24px; padding: 48px;
       max-width: 460px; margin: 40px auto 0;
       box-shadow: 0 20px 60px rgba(92,61,46,0.1);
@@ -258,12 +206,8 @@
       background: #fef3c7; display: flex; align-items: center; justify-content: center;
       font-size: 0.7rem; color: #92400e;
     }
-    .guarantee-badge {
-      display: flex; align-items: center; justify-content: center; gap: 6px;
-      margin-top: 16px; font-size: 0.82rem; color: var(--muted);
-    }
+    .footnote { font-size: 0.78rem; color: var(--muted); margin-top: 20px; line-height: 1.6; border-top: 1px solid var(--border); padding-top: 16px; }
 
-    /* FOOTER */
     footer { border-top: 1px solid var(--border); margin-top: 80px; }
     .footer-inner {
       max-width: 1080px; margin: 0 auto; padding: 32px 24px;
@@ -274,16 +218,13 @@
     footer a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
     footer a:hover { color: var(--bark); }
 
-    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .fade-up { opacity: 0; animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
-    .d1 { animation-delay: 0.1s; }
-    .d2 { animation-delay: 0.22s; }
-    .d3 { animation-delay: 0.36s; }
-    .d4 { animation-delay: 0.5s; }
+    .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.22s; }
+    .d3 { animation-delay: 0.36s; } .d4 { animation-delay: 0.5s; }
   </style>
 </head>
 <body>
@@ -295,10 +236,7 @@
       <div class="logo-icon">🌳</div>
       Family Album
     </a>
-    <div style="display:flex;align-items:center;gap:24px;">
-      <a href="#how-it-works" style="color:var(--muted);text-decoration:none;font-size:0.9rem;display:none;" class="md-show">How it works</a>
-      <a href="#buy" class="btn btn-sm">Get the App</a>
-    </div>
+    <a href="#buy" class="btn btn-sm">Get the App</a>
   </div>
 </nav>
 
@@ -309,10 +247,10 @@
       ✦ Simple · Private · No internet needed
     </div>
     <h1 class="hero-headline serif fade-up d1">
-      Every face.<br/>Every story.<br/><em>Always remembered.</em>
+      Your family's photos.<br/><em>Always close.</em><br/>Always available.
     </h1>
     <p class="hero-sub fade-up d2">
-      Family Album is a simple Android app designed for seniors. It organizes your family photos in a natural tree — grandparents at the top, children and grandchildren below. Just swipe to move between family members.
+      Family Album is a simple family tree photo album for Android. Each person in your family gets their own photo. Navigate up, down, and sideways through generations — grandparents at the top, great-grandchildren at the bottom.
     </p>
     <div class="hero-actions fade-up d3">
       <a href="YOUR_STRIPE_LINK_HERE" class="btn">
@@ -325,8 +263,6 @@
       <span>🔒 Fully offline</span>
       <span>·</span>
       <span>💳 One-time payment</span>
-      <span>·</span>
-      <span>↩️ 30-day guarantee</span>
     </div>
   </div>
 
@@ -340,11 +276,11 @@
           <div class="tree-row">
             <div class="tree-frame">
               <div class="avatar">GP</div>
-              <div class="label">Grandma &amp; Grandpa</div>
+              <div class="lbl">Grandma &amp; Grandpa</div>
             </div>
             <div class="tree-frame">
               <div class="avatar" style="background:linear-gradient(135deg,#8a6020,#5a3a10);">GP</div>
-              <div class="label">Grandma &amp; Grandpa</div>
+              <div class="lbl">Grandma &amp; Grandpa</div>
             </div>
           </div>
           <div class="connector"></div>
@@ -352,100 +288,123 @@
           <div class="tree-row">
             <div class="tree-frame">
               <div class="avatar" style="background:linear-gradient(135deg,#6a4c2e,#3e2010);">P</div>
-              <div class="label">Mom &amp; Dad</div>
+              <div class="lbl">Mom &amp; Dad</div>
             </div>
           </div>
           <div class="connector"></div>
           <!-- Home Person -->
           <div class="tree-row">
             <div class="tree-frame you">
-              <div class="avatar" style="background:linear-gradient(135deg,#c8923a,#8a5c10);">You</div>
-              <div class="label">Margaret</div>
+              <div class="avatar" style="background:linear-gradient(135deg,#c8923a,#8a5c10);">★</div>
+              <div class="lbl">Margaret</div>
             </div>
           </div>
-          <div class="home-label">★ Home</div>
+          <div class="home-lbl">Home</div>
           <div class="connector"></div>
           <!-- Children -->
           <div class="tree-row">
-            <div class="tree-frame" style="max-width:55px;">
-              <div class="avatar" style="width:28px;height:28px;font-size:0.7rem;background:linear-gradient(135deg,#5c7a3e,#2e4a1e);">C1</div>
-              <div class="label">Sarah</div>
+            <div class="tree-frame" style="max-width:52px;">
+              <div class="avatar" style="width:24px;height:24px;font-size:0.6rem;background:linear-gradient(135deg,#5c7a3e,#2e4a1e);">C1</div>
+              <div class="lbl">Sarah</div>
             </div>
-            <div class="tree-frame" style="max-width:55px;">
-              <div class="avatar" style="width:28px;height:28px;font-size:0.7rem;background:linear-gradient(135deg,#3e5c8a,#1e2e5a);">C2</div>
-              <div class="label">Tom</div>
+            <div class="tree-frame" style="max-width:52px;">
+              <div class="avatar" style="width:24px;height:24px;font-size:0.6rem;background:linear-gradient(135deg,#3e5c8a,#1e2e5a);">C2</div>
+              <div class="lbl">Tom</div>
             </div>
-            <div class="tree-frame" style="max-width:55px;">
-              <div class="avatar" style="width:28px;height:28px;font-size:0.7rem;background:linear-gradient(135deg,#7a3e5c,#4a1e2e);">C3</div>
-              <div class="label">Amy</div>
+            <div class="tree-frame" style="max-width:52px;">
+              <div class="avatar" style="width:24px;height:24px;font-size:0.6rem;background:linear-gradient(135deg,#7a3e5c,#4a1e2e);">C3</div>
+              <div class="lbl">Amy</div>
+            </div>
+          </div>
+          <div class="connector"></div>
+          <!-- Grandchildren row -->
+          <div class="tree-row">
+            <div class="tree-frame" style="max-width:44px;">
+              <div class="avatar" style="width:20px;height:20px;font-size:0.5rem;background:linear-gradient(135deg,#4a7a5c,#1e4a2e);">GC</div>
+              <div class="lbl">Leo</div>
+            </div>
+            <div class="tree-frame" style="max-width:44px;">
+              <div class="avatar" style="width:20px;height:20px;font-size:0.5rem;background:linear-gradient(135deg,#5a4a7a,#2e1e4a);">GC</div>
+              <div class="lbl">Mia</div>
             </div>
           </div>
         </div>
-        <div class="nav-hint">← swipe to navigate →</div>
+        <div class="nav-hint">swipe or tap buttons to navigate</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- WHO IT'S FOR -->
-<section class="section" style="background:var(--warm);max-width:100%;">
-  <div style="max-width:1080px;margin:0 auto;padding:0 24px;">
+<section style="background:var(--warm);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section" style="padding-top:64px;padding-bottom:64px;">
     <span class="section-label">Who it's for</span>
-    <h2 class="section-title serif">Made for families who want something simple.</h2>
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="audience-icon">👵</div>
-        <h3 style="font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--bark);">Seniors with memory concerns</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.65;">A gentle, familiar way to see and remember family members. No complicated menus — just swipe to move through the family.</p>
+    <h2 class="section-title serif">For anyone who wants their family photos organized.</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">👵</div>
+        <h3>People who find phones overwhelming</h3>
+        <p>No complicated menus. No searching through a camera roll. Just open the app and your family is right there — one face at a time.</p>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">👨‍👩‍👧</div>
-        <h3 style="font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--bark);">Family members setting it up</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.65;">A son, daughter, or grandchild sets up the album once — adding names and photos — then hands the phone to their loved one to enjoy.</p>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧</div>
+        <h3>Families who want to give a gift</h3>
+        <p>Someone sets it up — adding names and photos — then hands the phone to the person it was made for. A thoughtful, lasting gift for a parent or grandparent.</p>
       </div>
-      <div class="audience-card">
-        <div class="audience-icon">🏠</div>
-        <h3 style="font-weight:600;font-size:1rem;margin-bottom:8px;color:var(--bark);">Anyone who wants family photos organized</h3>
-        <p style="color:var(--muted);font-size:0.93rem;line-height:1.65;">No cloud accounts, no subscriptions, no confusion. Your family photos live on your phone, organized the way a family actually is.</p>
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3>Anyone who just wants it simple</h3>
+        <p>No cloud accounts, no subscriptions, no confusion. Your family photos live on your phone, organized the way a family actually is.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PERSONAL STORY -->
+<div class="story-band">
+  <div class="story-inner">
+    <span class="section-label" style="display:block;text-align:center;">Why this app exists</span>
+    <blockquote>
+      "I wished I'd had something like this for my own mother. When I went looking for it, it didn't exist — so I built it with her in mind. I hope it brings the same comfort to your family that I wish it could have brought to mine."
+    </blockquote>
+    <p class="attr">— [Your name], creator of Family Album</p>
+  </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <section class="section" id="how-it-works">
   <span class="section-label">How it works</span>
-  <h2 class="section-title serif">Set it up once. Enjoy it forever.</h2>
+  <h2 class="section-title serif">Set it up once. Enjoy it anytime.</h2>
   <div class="steps">
     <div class="step">
       <div class="step-line"></div>
       <div class="step-num">1</div>
-      <div class="step-content">
-        <h3>A family member sets up the album</h3>
-        <p>Enter a PIN to unlock setup mode. Add each family member — grandparents at the top, then parents, then the home person, then children and grandchildren below. Tap to add their photo and name.</p>
+      <div>
+        <h3>Someone sets up the album</h3>
+        <p>Enter a PIN to unlock setup mode. Add each family member across up to seven generations — great-grandparents, grandparents, parents, the home person and their siblings, children, grandchildren, and great-grandchildren. Tap each frame to add a photo and name.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-line"></div>
       <div class="step-num">2</div>
-      <div class="step-content">
-        <h3>The album opens to the home person</h3>
-        <p>When a senior opens the app, they see their own photo front and center. One button returns them here no matter where they are in the album.</p>
+      <div>
+        <h3>The album opens to the person it was made for</h3>
+        <p>Every time the app opens, it goes straight to the person the album was built around — their photo, front and center. One button always brings them back here.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-line"></div>
       <div class="step-num">3</div>
-      <div class="step-content">
-        <h3>Swipe to move through the family</h3>
-        <p>Swipe up to see parents and grandparents. Swipe down to see children and grandchildren. Swipe left or right to see siblings. It works with a slow drag — no quick flick needed.</p>
+      <div>
+        <h3>Navigate with swipes or on-screen buttons</h3>
+        <p>Swipe or tap the navigation buttons to move through the family. Up to older generations, down to younger ones, left and right for siblings. Slow and deliberate — no rushing needed.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="step-content">
+      <div>
         <h3>Works completely offline</h3>
-        <p>No Wi-Fi needed, ever. All photos and names are stored privately on the phone. Nothing is uploaded anywhere.</p>
+        <p>No Wi-Fi ever needed. All photos are stored privately on the device. Nothing is uploaded anywhere.</p>
       </div>
     </div>
   </div>
@@ -454,37 +413,37 @@
 <!-- FEATURES -->
 <section class="section" style="padding-top:0;">
   <span class="section-label">Features</span>
-  <h2 class="section-title serif">Thoughtfully designed for ease of use.</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🌳</div>
-      <h3>Natural family tree layout</h3>
-      <p>Four generations organized top to bottom — grandparents, parents, you, children, grandchildren, great-grandchildren. The structure mirrors how families actually work.</p>
+  <h2 class="section-title serif">Simple by design.</h2>
+  <div class="grid-3">
+    <div class="card">
+      <div class="feat-icon">🌳</div>
+      <h3>Seven generations</h3>
+      <p>Great-grandparents, grandparents, parents, the home person and siblings, children, grandchildren, and great-grandchildren — all in one place.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">👆</div>
-      <h3>Simple swipe navigation</h3>
-      <p>Slow, deliberate swipes work just fine. No need for speed. Swipe up for older generations, down for younger, left and right for siblings.</p>
+    <div class="card">
+      <div class="feat-icon">📸</div>
+      <h3>Full size photos</h3>
+      <p>Each family member fills their own frame. Names appear clearly. Nothing cluttered, nothing confusing.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏠</div>
-      <h3>Home button always visible</h3>
-      <p>One tap returns to the home person's photo no matter how deep into the family tree you've navigated. Never gets lost.</p>
+    <div class="card">
+      <div class="feat-icon">👆</div>
+      <h3>Swipe or tap to navigate</h3>
+      <p>Move through the family with a slow swipe or by tapping the navigation buttons. Up for older generations, down for younger, left and right for siblings.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔒</div>
+    <div class="card">
+      <div class="feat-icon">🏠</div>
+      <h3>Always find your way home</h3>
+      <p>One tap returns to the person the album was set up for — no matter how deep into the family tree you've gone.</p>
+    </div>
+    <div class="card">
+      <div class="feat-icon">🔒</div>
       <h3>PIN-protected setup</h3>
-      <p>Only family members who know the PIN can add, edit, or remove people. The senior using the app just sees photos — no accidental changes possible.</p>
+      <p>Only someone with the PIN can add, edit, or remove people. The person using the album just sees photos — no accidental changes possible.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📴</div>
+    <div class="card">
+      <div class="feat-icon">📴</div>
       <h3>Fully offline, fully private</h3>
-      <p>No internet connection required. No accounts. No cloud. Photos stay on the device and nowhere else.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📸</div>
-      <h3>Full-screen photos</h3>
-      <p>Each family member fills the whole screen. Names appear clearly over the photo. Nothing cluttered, nothing confusing.</p>
+      <p>No internet connection needed. No accounts. No cloud. Photos stay on the device and nowhere else.</p>
     </div>
   </div>
 </section>
@@ -493,9 +452,9 @@
 <section class="section" style="padding-top:0;">
   <div class="testimonial">
     <blockquote>
-      "Replace this with a real quote from a family member who used the app. The more specific the better — mention the senior's name, what changed, what they said."
+      "Replace this with a real quote from someone who has used the app. The more specific the better."
     </blockquote>
-    <cite>— First Name, relationship (e.g. daughter of the home person)</cite>
+    <cite>— First Name, their relationship to the person the album was made for</cite>
   </div>
 </section>
 
@@ -507,20 +466,20 @@
 
   <div class="pricing-card">
     <div class="price">$[PRICE]</div>
-    <div class="price-sub">one-time · Android · instant download</div>
+    <div class="price-sub">one-time · Android · instant download link sent to your email</div>
     <div class="check-list">
-      <div class="check-item"><div class="check-dot">✓</div>Full family tree, unlimited family members</div>
-      <div class="check-item"><div class="check-dot">✓</div>Full-screen photo for every person</div>
+      <div class="check-item"><div class="check-dot">✓</div>All seven generations, unlimited family members</div>
+      <div class="check-item"><div class="check-dot">✓</div>Full size photo for every person</div>
       <div class="check-item"><div class="check-dot">✓</div>PIN-protected setup mode</div>
       <div class="check-item"><div class="check-dot">✓</div>Works 100% offline — no Wi-Fi ever needed</div>
+      <div class="check-item"><div class="check-dot">✓</div>Auto-launch on device startup *</div>
       <div class="check-item"><div class="check-dot">✓</div>Free updates</div>
-      <div class="check-item"><div class="check-dot">✓</div>30-day money-back guarantee</div>
     </div>
     <a href="YOUR_STRIPE_LINK_HERE" class="btn" style="width:100%;justify-content:center;padding:16px;font-size:1rem;">
       Buy Now →
     </a>
-    <div class="guarantee-badge">
-      🛡️ 30-day money-back guarantee · Secure payment
+    <div class="footnote">
+      * Auto-launch on startup is not supported on Amazon Fire tablets.
     </div>
   </div>
 </section>
